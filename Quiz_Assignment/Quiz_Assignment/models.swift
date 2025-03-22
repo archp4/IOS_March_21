@@ -40,8 +40,16 @@ class QuizManager {
     var quizDelegate: QuizDelegate?
 
     var quizBank: [Quiz] = [
-        Quiz(question: "Question", answer: "Answer", options: ["Option 1", "Option 2", "Option 3"]),
-        Quiz(question: "Creator", answer: "Arch Patel", options: ["Jay Patel", "Yash Patel", "NinjaMaster"])
+        Quiz(question: "I wield three swords, but I'm no pirate. Who am I?", answer: "Roronoa Zoro", options: ["Monkey D. Luffy", "Sanji", "Nami"]),
+        Quiz(question: "I seek the power of friendship, and scream my attacks. Who am I?", answer: "Natsu Dragneel", options: ["Gray Fullbuster", "Erza Scarlet", "Lucy Heartfilia"]),
+        Quiz(question: "I'm a detective who shrinks, but still solves crimes. Who am I?", answer: "Conan Edogawa", options: ["Kaito Kid", "Ran Mouri", "Heiji Hattori"]),
+        Quiz(question: "I'm the strongest hunter, but my best friend is a robot. Who am I?", answer: "Gon Freecss", options: ["Killua Zoldyck", "Kurapika", "Leorio Paladinight"]),
+        Quiz(question: "I'm the number one unpredictable ninja. Who am I?", answer: "Naruto Uzumaki", options: ["Sasuke Uchiha", "Sakura Haruno", "Kakashi Hatake"]),
+        Quiz(question: "I'm a titan shifter, fighting for humanity's freedom. Who am I?", answer: "Eren Yeager", options: ["Mikasa Ackerman", "Armin Arlert", "Levi Ackerman"]),
+        Quiz(question: "I'm the world's greatest detective, with a notebook of death. Who am I?", answer: "Light Yagami", options: ["L Lawliet", "Misa Amane", "Near"]),
+        Quiz(question: "I'm a psychic with a powerful spoon, but I just want to be normal. Who am I?", answer: "Mob", options: ["Reigen Arataka", "Ritsu Kageyama", "Teruki Hanazawa"]),
+        Quiz(question: "I'm a demon slayer, fighting to avenge my family. Who am I?", answer: "Tanjiro Kamado", options: ["Zenitsu Agatsuma", "Inosuke Hashibira", "Nezuko Kamado"]),
+        Quiz(question: "I'm a high school student who gained the power of a shinigami. Who am I?", answer: "Ichigo Kurosaki", options: ["Orihime Inoue", "Uryu Ishida", "Byakuya Kuchiki"])
     ]
 
     var quiz: [Quiz] {

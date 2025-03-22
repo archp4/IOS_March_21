@@ -49,6 +49,12 @@ class AddQuizViewController: ViewController {
     }
     
     @IBAction func onCancel(_ sender: Any) {
+        let alert = UIAlertController(title: "Alert", message: "Are you sure want quit with unsave data", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in
+            self.dismiss(animated: true, completion: nil) 
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        present(alert, animated: false)
         self.dismiss(animated: true)
     }
     
