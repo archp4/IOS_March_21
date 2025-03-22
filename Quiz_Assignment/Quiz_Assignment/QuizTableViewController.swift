@@ -7,26 +7,32 @@
 
 import UIKit
 
-class QuizTableViewController: UITableViewController {
+class QuizTableViewController: UITableViewController, QuizDelegate {
+    func QuizAdded() {
+        reloadData()
+    }
+    
 
     var localModel : QuizManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        QuizManager.shared.quizDelegate = self
         localModel = ((UIApplication.shared.delegate) as! AppDelegate).model
+    }
+    
+    func reloadData(){
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if localModel == nil{
-            return 0
-        }
-        return localModel?.quizBank.count ?? 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return localModel?.quizBank.count ?? 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,14 +43,13 @@ class QuizTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuizTile") as! QuizTileTableViewCell
         let object = localModel?.quizBank[indexPath.row]
-        print(object?.question ?? "")
         
         
         cell.QuestionLabel?.text = object?.question ?? ""
         cell.CorrectAnswerLabel?.text = object?.answer ?? ""
-        cell.OptionOneLabel?.text = object?.optionOne ?? ""
-        cell.OptionTwoLabel?.text = object?.optionTwo ?? ""
-        cell.OptionThreeLabel?.text = object?.optionThree ?? ""
+        cell.OptionOneLabel?.text = object?.options[0] ?? ""
+        cell.OptionTwoLabel?.text = object?.options[1] ?? ""
+        cell.OptionThreeLabel?.text = object?.options[2] ?? ""
         
         
         return cell
@@ -53,6 +58,19 @@ class QuizTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(segue.identifier!)
+        if segue.identifier! == "updateQuiz"{
+            if let hs = segue.destination as? UpdateQuizViewController{
+                let localModel = self.localModel
+                let index  = tableView.indexPathForSelectedRow?.row ?? 0
+                hs.data = localModel?.quizBank[index]
+                print("ready")
+            }
+            
+        }
     }
 
     /*

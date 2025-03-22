@@ -17,6 +17,9 @@
 		BD347CD42D8DB55500AB1B79 /* models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD347CD32D8DB55500AB1B79 /* models.swift */; };
 		BD347CD62D8DB88500AB1B79 /* QuizTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD347CD52D8DB88500AB1B79 /* QuizTableViewController.swift */; };
 		BD347CD82D8DC80B00AB1B79 /* AddQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD347CD72D8DC80B00AB1B79 /* AddQuizViewController.swift */; };
+		BD347CDA2D8DE8F100AB1B79 /* UpdateQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD347CD92D8DE8F100AB1B79 /* UpdateQuizViewController.swift */; };
+		BD347CDC2D8DF30200AB1B79 /* QuizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD347CDB2D8DF30200AB1B79 /* QuizerViewController.swift */; };
+		BD347CE02D8E11CD00AB1B79 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD347CDF2D8E11CD00AB1B79 /* RadioButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		BD347CD32D8DB55500AB1B79 /* models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = models.swift; sourceTree = "<group>"; };
 		BD347CD52D8DB88500AB1B79 /* QuizTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewController.swift; sourceTree = "<group>"; };
 		BD347CD72D8DC80B00AB1B79 /* AddQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuizViewController.swift; sourceTree = "<group>"; };
+		BD347CD92D8DE8F100AB1B79 /* UpdateQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateQuizViewController.swift; sourceTree = "<group>"; };
+		BD347CDB2D8DF30200AB1B79 /* QuizerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizerViewController.swift; sourceTree = "<group>"; };
+		BD347CDF2D8E11CD00AB1B79 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,9 @@
 				BD347CD32D8DB55500AB1B79 /* models.swift */,
 				BD347CD52D8DB88500AB1B79 /* QuizTableViewController.swift */,
 				BD347CD72D8DC80B00AB1B79 /* AddQuizViewController.swift */,
+				BD347CD92D8DE8F100AB1B79 /* UpdateQuizViewController.swift */,
+				BD347CDB2D8DF30200AB1B79 /* QuizerViewController.swift */,
+				BD347CDF2D8E11CD00AB1B79 /* RadioButton.swift */,
 			);
 			path = Quiz_Assignment;
 			sourceTree = "<group>";
@@ -154,9 +163,12 @@
 				BD347CD22D8DB47900AB1B79 /* QuizTileTableViewCell.swift in Sources */,
 				BD347CD82D8DC80B00AB1B79 /* AddQuizViewController.swift in Sources */,
 				BD347CD62D8DB88500AB1B79 /* QuizTableViewController.swift in Sources */,
+				BD347CDA2D8DE8F100AB1B79 /* UpdateQuizViewController.swift in Sources */,
 				BD347CC22D8DAFA200AB1B79 /* ViewController.swift in Sources */,
 				BD347CBE2D8DAFA200AB1B79 /* AppDelegate.swift in Sources */,
+				BD347CE02D8E11CD00AB1B79 /* RadioButton.swift in Sources */,
 				BD347CC02D8DAFA200AB1B79 /* SceneDelegate.swift in Sources */,
+				BD347CDC2D8DF30200AB1B79 /* QuizerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

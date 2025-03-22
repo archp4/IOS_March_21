@@ -8,45 +8,58 @@
 import Foundation
 
 
-class Quiz
-{
-    var id : UUID
-    var question : String
+protocol QuizDelegate{
+    func QuizAdded()
+}
+
+class Quiz {
+    var id: UUID
+    var question: String
     var answer: String
-    var optionOne: String
-    var optionTwo: String
-    var optionThree: String
-    
-    init(question: String, answer: String, optionOne: String, optionTwo: String, optionThree: String) {
+    var options: [String] // Changed to an array of options
+
+    init(question: String, answer: String, options: [String]) {
         self.id = UUID()
         self.question = question
         self.answer = answer
-        self.optionOne = optionOne
-        self.optionTwo = optionTwo
-        self.optionThree = optionThree
+        self.options = options.shuffled() // Shuffle options during initialization
     }
-    
+
+    // Function to shuffle options if needed later
+    func shuffleOptions() ->[String] {
+        var list = options
+        list.append(answer)
+        list.shuffle()
+        return list
+    }
 }
 
+class QuizManager {
+    static var shared = QuizManager()
 
-class QuizManager{
-    
-    var quizBank : [Quiz] = [
-        Quiz(question: "Question", answer: "Answer", optionOne: "Option 1", optionTwo: "Option 2", optionThree: "Option 3")
+    var quizDelegate: QuizDelegate?
+
+    var quizBank: [Quiz] = [
+        Quiz(question: "Question", answer: "Answer", options: ["Option 1", "Option 2", "Option 3"]),
+        Quiz(question: "Creator", answer: "Arch Patel", options: ["Jay Patel", "Yash Patel", "NinjaMaster"])
     ]
-    
-    func addQuiz(newQuiz : Quiz){
+
+    var quiz: [Quiz] {
+        return quizBank
+    }
+
+    func addQuiz(newQuiz: Quiz) {
+        print(newQuiz.question)
         quizBank.append(newQuiz)
+        self.quizDelegate?.QuizAdded()
     }
-    
-    func deleteQuiz(id:UUID){
-        quizBank.removeAll{ quiz in return quiz.id == id }
+
+    func deleteQuiz(id: UUID) {
+        quizBank.removeAll { quiz in return quiz.id == id }
     }
-    
-    func updateQuiz(updatedQuiz: Quiz)
-    {
+
+    func updateQuiz(updatedQuiz: Quiz) {
         self.deleteQuiz(id: updatedQuiz.id)
         self.addQuiz(newQuiz: updatedQuiz)
     }
 }
-

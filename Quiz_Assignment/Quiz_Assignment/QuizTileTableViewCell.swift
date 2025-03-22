@@ -16,19 +16,12 @@ class QuizTileTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
     @IBOutlet weak var QuestionLabel: UILabel!
-    
     @IBOutlet weak var CorrectAnswerLabel: UILabel!
-    
-    
     @IBOutlet weak var OptionThreeLabel: UILabel!
-    
     @IBOutlet weak var OptionTwoLabel: UILabel!
-    
     @IBOutlet weak var OptionOneLabel: UILabel!
-    
 }
