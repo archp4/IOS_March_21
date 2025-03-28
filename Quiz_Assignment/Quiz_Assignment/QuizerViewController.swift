@@ -104,6 +104,8 @@ class QuizerViewController: ViewController {
         
         if selectedAnswer != nil && localModel?.quiz[currentQuestionIndex].answer == selectedAnswer {
             answerList[currentQuestionIndex] = true
+        } else {
+            answerList[currentQuestionIndex] = false
         }
         
         if currentQuestionIndex < (localModel?.quiz.count ?? 0) - 1 {

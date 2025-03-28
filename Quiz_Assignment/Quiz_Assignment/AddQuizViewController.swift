@@ -55,7 +55,6 @@ class AddQuizViewController: ViewController {
         })
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         present(alert, animated: false)
-        self.dismiss(animated: true)
     }
     
 
