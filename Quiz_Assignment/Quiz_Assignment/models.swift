@@ -18,8 +18,8 @@ class Quiz {
     var answer: String
     var options: [String] // Changed to an array of options
 
-    init(question: String, answer: String, options: [String]) {
-        self.id = UUID()
+    init(id: UUID = UUID(), question: String, answer: String, options: [String]) {
+        self.id = id
         self.question = question
         self.answer = answer
         self.options = options.shuffled() // Shuffle options during initialization
@@ -63,10 +63,17 @@ class QuizManager {
     }
 
     func deleteQuiz(id: UUID) {
+        
         quizBank.removeAll { quiz in return quiz.id == id }
     }
 
     func updateQuiz(updatedQuiz: Quiz) {
+        print("In Update")
+        print("\(updatedQuiz.id) To Update")
+        for quiz in quizBank{
+            print("\(quiz.id) \(quiz.question)")
+        }
+        print(quizBank.contains(where: {quiz in return quiz.id == updatedQuiz.id}))
         self.deleteQuiz(id: updatedQuiz.id)
         self.addQuiz(newQuiz: updatedQuiz)
     }
